@@ -4,6 +4,13 @@ import {Component} from '@angular/core';
     selector: 'app',
     template: `
       <catList></catList>
+      <catList></catList>
+      <catList></catList>
+      <catList></catList>
+      <catList></catList>
+      <catList></catList>
+      <catList></catList>
+      <catList></catList>
     `
 })
 export class AppComponent {

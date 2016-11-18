@@ -9,6 +9,6 @@ import { CatService } from './cat.service';
   imports: [ BrowserModule ],
   declarations: [ AppComponent, CatComponent, CatListComponent ],
   bootstrap: [ AppComponent ],
-  providers: [ CatService ]
+  providers: [ ]
 })
 export class AppModule { }

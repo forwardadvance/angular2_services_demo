@@ -13,7 +13,7 @@ import { CatService } from './cat.service';
 })
 export class CatListComponent {
   cats:Array<any>
-  constructor(catService:CatService) {
-    this.cats = catService.cats;
+  constructor() {
+    this.cats = [{name:"Mikey"}]
   }
 }

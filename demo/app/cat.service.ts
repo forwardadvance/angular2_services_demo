@@ -5,7 +5,7 @@ export class CatService {
   cats:Array<any>
   constructor() {
     this.cats = [
-      { name: "Danger Moog" },
+      { name: "Danger Moog: " + Math.random() },
       { name: "Pippa T. Floof" },
       { name: "Sniff Weasel" }
     ]

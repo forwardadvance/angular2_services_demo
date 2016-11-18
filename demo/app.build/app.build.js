@@ -1,26 +1,20 @@
 webpackJsonp([0],{
 
 /***/ 0:
-/*!********************!*\
-  !*** ./app/app.ts ***!
-  \********************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	__webpack_require__(/*! core-js/es6 */ 1);
-	__webpack_require__(/*! core-js/es7/reflect */ 246);
-	__webpack_require__(/*! zone.js/dist/zone */ 258);
-	var platform_browser_dynamic_1 = __webpack_require__(/*! @angular/platform-browser-dynamic */ 260);
-	var app_module_1 = __webpack_require__(/*! ./app.module */ 282);
+	__webpack_require__(1);
+	__webpack_require__(246);
+	__webpack_require__(258);
+	var platform_browser_dynamic_1 = __webpack_require__(260);
+	var app_module_1 = __webpack_require__(282);
 	platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
 
 /***/ },
 
 /***/ 282:
-/*!***************************!*\
-  !*** ./app/app.module.ts ***!
-  \***************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -33,12 +27,12 @@ webpackJsonp([0],{
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(/*! @angular/core */ 262);
-	var platform_browser_1 = __webpack_require__(/*! @angular/platform-browser */ 280);
-	var app_component_1 = __webpack_require__(/*! ./app.component */ 283);
-	var cat_component_1 = __webpack_require__(/*! ./cat.component */ 284);
-	var cat_list_component_1 = __webpack_require__(/*! ./cat.list.component */ 285);
-	var cat_service_1 = __webpack_require__(/*! ./cat.service */ 286);
+	var core_1 = __webpack_require__(262);
+	var platform_browser_1 = __webpack_require__(280);
+	var app_component_1 = __webpack_require__(283);
+	var cat_component_1 = __webpack_require__(284);
+	var cat_list_component_1 = __webpack_require__(285);
+	var cat_service_1 = __webpack_require__(286);
 	var AppModule = (function () {
 	    function AppModule() {
 	    }
@@ -59,9 +53,6 @@ webpackJsonp([0],{
 /***/ },
 
 /***/ 283:
-/*!******************************!*\
-  !*** ./app/app.component.ts ***!
-  \******************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -74,7 +65,7 @@ webpackJsonp([0],{
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(/*! @angular/core */ 262);
+	var core_1 = __webpack_require__(262);
 	var AppComponent = (function () {
 	    function AppComponent() {
 	        this.miowCount = 0;
@@ -95,9 +86,6 @@ webpackJsonp([0],{
 /***/ },
 
 /***/ 284:
-/*!******************************!*\
-  !*** ./app/cat.component.ts ***!
-  \******************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -110,7 +98,7 @@ webpackJsonp([0],{
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(/*! @angular/core */ 262);
+	var core_1 = __webpack_require__(262);
 	var CatComponent = (function () {
 	    function CatComponent() {
 	        this.miow = new core_1.EventEmitter();
@@ -142,9 +130,6 @@ webpackJsonp([0],{
 /***/ },
 
 /***/ 285:
-/*!***********************************!*\
-  !*** ./app/cat.list.component.ts ***!
-  \***********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -157,16 +142,21 @@ webpackJsonp([0],{
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(/*! @angular/core */ 262);
-	var cat_service_1 = __webpack_require__(/*! ./cat.service */ 286);
+	var core_1 = __webpack_require__(262);
+	var cat_service_1 = __webpack_require__(286);
 	var CatListComponent = (function () {
 	    function CatListComponent(catService) {
-	        this.cats = catService.cats;
+	        this.cats = [
+	            { name: "Danger Moog" },
+	            { name: "Pippa T. Floof" },
+	            { name: "Sniff Weasel" }
+	        ];
 	    }
 	    CatListComponent = __decorate([
 	        core_1.Component({
 	            selector: 'catList',
-	            template: "\n      <ul>\n      <li *ngFor=\"let cat of cats\">\n        {{cat.name}}\n      </li>\n    </ul>\n    "
+	            template: "\n      <ul>\n      <li *ngFor=\"let cat of cats\">\n        {{cat.name}}\n      </li>\n    </ul>\n    ",
+	            providers: [cat_service_1.CatService]
 	        }), 
 	        __metadata('design:paramtypes', [(typeof (_a = typeof cat_service_1.CatService !== 'undefined' && cat_service_1.CatService) === 'function' && _a) || Object])
 	    ], CatListComponent);
@@ -179,9 +169,6 @@ webpackJsonp([0],{
 /***/ },
 
 /***/ 286:
-/*!****************************!*\
-  !*** ./app/cat.service.ts ***!
-  \****************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -194,7 +181,7 @@ webpackJsonp([0],{
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(/*! @angular/core */ 262);
+	var core_1 = __webpack_require__(262);
 	var CatService = (function () {
 	    function CatService() {
 	        this.cats = [
@@ -218,4 +205,3 @@ webpackJsonp([0],{
 /***/ }
 
 });
-//# sourceMappingURL=app.build.js.map

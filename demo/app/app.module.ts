@@ -5,10 +5,11 @@ import { CatComponent } from './cat.component';
 import { CatListComponent } from './cat.list.component';
 import { CatService } from './cat.service';
 
+
 @NgModule({
   imports: [ BrowserModule ],
   declarations: [ AppComponent, CatComponent, CatListComponent ],
   bootstrap: [ AppComponent ],
-  providers: [ CatService ]
+  providers: [  ]
 })
 export class AppModule { }

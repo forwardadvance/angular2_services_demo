@@ -3,7 +3,7 @@ import {Component} from '@angular/core';
 import {HeroModel} from './hero.model';
 import {InventoryModel} from './inventory.model';
 import {LocationModel} from './location.model';
-import {LocationService} from './location.service';
+
 import {cell} from './locations/cell';
 
 @Component({
@@ -31,10 +31,7 @@ import {cell} from './locations/cell';
         <location [location]="locationService.currentLocation" (pickUpItem)="handlePickUpItem($event)"></location>
       </div>
       <div class="row">
-        <button class="button" *ngIf="locationService.currentLocation.north" (click)="locationService.moveNorth()">North</button>
-        <button class="button" *ngIf="locationService.currentLocation.south" (click)="locationService.moveSouth()">South</button>
-        <button class="button" *ngIf="locationService.currentLocation.east" (click)="locationService.moveEast()">East</button>
-        <button class="button" *ngIf="locationService.currentLocation.west" (click)="locationService.moveWest()">West</button>
+
       </div>
     </div>
 
@@ -49,13 +46,13 @@ import {cell} from './locations/cell';
     hero:HeroModel = new HeroModel();
     inventory:InventoryModel = new InventoryModel();
 
-    constructor(public locationService: LocationService) {
-      locationService.currentLocation = cell;
+    constructor() {
+
     }
 
     handlePickUpItem(item:any) {
       console.log('item picked up', item);
       this.inventory.addItem(item);
-      this.locationService.currentLocation.removeItem(item);
+
     }
   }

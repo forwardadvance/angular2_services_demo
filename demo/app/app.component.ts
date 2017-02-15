@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { CatService } from './cat.service';
 
 @Component({
     selector: 'app',
@@ -9,9 +10,8 @@ import {Component} from '@angular/core';
       <catList></catList>
       <catList></catList>
       <catList></catList>
-      <catList></catList>
-      <catList></catList>
-    `
+    `,
+    providers: [CatService]
 })
 export class AppComponent {
   private name: string

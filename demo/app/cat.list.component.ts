@@ -1,28 +1,31 @@
+// <ul>
+//       <li *ngFor="let cat of cats">
+//         {{cat.name}}
+//       </li>
+//     </ul>
+
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CatService } from './cat.service';
 
 @Component({
     selector: 'catList',
     template: `
-    <ul>
-      <li *ngFor="let cat of cats">
-        {{cat.name}}
-      </li>
-    </ul>
+      <h1>Cats!!!</h1>
+      <ul>
+        <li *ngFor="let cat of cats">
+          {{cat.name}}
+        </li>
+      </ul>
     `,
-    providers: [ CatService ]
+    // providers: [ CatService ]
 })
 export class CatListComponent {
   cats:Array<any>
-  // constructor() {
-  //   this.cats = [
-  //     { name: "Danger Moog!!" },
-  //     { name: "Pippa T. Floof" },
-  //     { name: "Sniff Weasel" }
-  //   ]
-  // }
-
-  constructor(catService:CatService) {
-    this.cats = catService.get();
+  constructor(cats:CatService) {
+    this.cats = cats.get()
   }
+
+  // constructor() {
+  //   // this.cats = catService.get();
+  // }
 }

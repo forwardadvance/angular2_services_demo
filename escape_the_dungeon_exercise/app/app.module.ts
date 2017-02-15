@@ -17,7 +17,7 @@ import {LocationService} from './location.service';
       InventoryComponent,
       LocationComponent ],
   bootstrap: [ AppComponent ],
-  providers: [ LocationService ]
+  providers: [  ]
 
 })
 export class AppModule{};

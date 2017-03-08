@@ -1,20 +1,26 @@
 webpackJsonp([0],{
 
 /***/ 0:
+/*!********************!*\
+  !*** ./app/app.ts ***!
+  \********************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	__webpack_require__(1);
-	__webpack_require__(246);
-	__webpack_require__(258);
-	var platform_browser_dynamic_1 = __webpack_require__(260);
-	var app_module_1 = __webpack_require__(282);
+	__webpack_require__(/*! core-js/es6 */ 1);
+	__webpack_require__(/*! core-js/es7/reflect */ 246);
+	__webpack_require__(/*! zone.js/dist/zone */ 258);
+	var platform_browser_dynamic_1 = __webpack_require__(/*! @angular/platform-browser-dynamic */ 260);
+	var app_module_1 = __webpack_require__(/*! ./app.module */ 282);
 	platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
 
 /***/ },
 
 /***/ 282:
+/*!***************************!*\
+  !*** ./app/app.module.ts ***!
+  \***************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27,11 +33,12 @@ webpackJsonp([0],{
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(262);
-	var platform_browser_1 = __webpack_require__(280);
-	var app_component_1 = __webpack_require__(283);
-	var cat_component_1 = __webpack_require__(285);
-	var cat_list_component_1 = __webpack_require__(286);
+	var core_1 = __webpack_require__(/*! @angular/core */ 262);
+	var platform_browser_1 = __webpack_require__(/*! @angular/platform-browser */ 280);
+	var app_component_1 = __webpack_require__(/*! ./app.component */ 283);
+	var cat_component_1 = __webpack_require__(/*! ./cat.component */ 285);
+	var cat_list_component_1 = __webpack_require__(/*! ./cat.list.component */ 286);
+	var cat_service_1 = __webpack_require__(/*! ./cat.service */ 284);
 	var AppModule = (function () {
 	    function AppModule() {
 	    }
@@ -40,7 +47,7 @@ webpackJsonp([0],{
 	            imports: [platform_browser_1.BrowserModule],
 	            declarations: [app_component_1.AppComponent, cat_component_1.CatComponent, cat_list_component_1.CatListComponent],
 	            bootstrap: [app_component_1.AppComponent],
-	            providers: []
+	            providers: [cat_service_1.CatService]
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], AppModule);
@@ -52,6 +59,9 @@ webpackJsonp([0],{
 /***/ },
 
 /***/ 283:
+/*!******************************!*\
+  !*** ./app/app.component.ts ***!
+  \******************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -64,8 +74,8 @@ webpackJsonp([0],{
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(262);
-	var cat_service_1 = __webpack_require__(284);
+	var core_1 = __webpack_require__(/*! @angular/core */ 262);
+	var cat_service_1 = __webpack_require__(/*! ./cat.service */ 284);
 	var AppComponent = (function () {
 	    function AppComponent() {
 	        this.miowCount = 0;
@@ -74,7 +84,7 @@ webpackJsonp([0],{
 	    AppComponent = __decorate([
 	        core_1.Component({
 	            selector: 'app',
-	            template: "\n      <catList></catList>\n      <catList></catList>\n      <catList></catList>\n      <catList></catList>\n      <catList></catList>\n      <catList></catList>\n    ",
+	            template: "\n      <catList></catList>\n      <catList></catList>\n      <catList></catList>\n      <catList></catList>\n    ",
 	            providers: [cat_service_1.CatService]
 	        }), 
 	        __metadata('design:paramtypes', [])
@@ -87,6 +97,9 @@ webpackJsonp([0],{
 /***/ },
 
 /***/ 284:
+/*!****************************!*\
+  !*** ./app/cat.service.ts ***!
+  \****************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -99,11 +112,11 @@ webpackJsonp([0],{
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(262);
+	var core_1 = __webpack_require__(/*! @angular/core */ 262);
 	var CatService = (function () {
 	    function CatService() {
 	        this.cats = [
-	            { name: "Danger Moog: " + Math.random() },
+	            { name: "Danger Moog " + Math.random() },
 	            { name: "Pippa T. Floof" },
 	            { name: "Sniff Weasel" }
 	        ];
@@ -123,6 +136,9 @@ webpackJsonp([0],{
 /***/ },
 
 /***/ 285:
+/*!******************************!*\
+  !*** ./app/cat.component.ts ***!
+  \******************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -135,7 +151,7 @@ webpackJsonp([0],{
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(262);
+	var core_1 = __webpack_require__(/*! @angular/core */ 262);
 	var CatComponent = (function () {
 	    function CatComponent() {
 	        this.miow = new core_1.EventEmitter();
@@ -167,6 +183,9 @@ webpackJsonp([0],{
 /***/ },
 
 /***/ 286:
+/*!***********************************!*\
+  !*** ./app/cat.list.component.ts ***!
+  \***********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// <ul>
@@ -184,8 +203,8 @@ webpackJsonp([0],{
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(262);
-	var cat_service_1 = __webpack_require__(284);
+	var core_1 = __webpack_require__(/*! @angular/core */ 262);
+	var cat_service_1 = __webpack_require__(/*! ./cat.service */ 284);
 	var CatListComponent = (function () {
 	    function CatListComponent(cats) {
 	        this.cats = cats.get();
@@ -206,3 +225,4 @@ webpackJsonp([0],{
 /***/ }
 
 });
+//# sourceMappingURL=app.build.js.map

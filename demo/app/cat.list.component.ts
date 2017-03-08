@@ -20,6 +20,13 @@ import { CatService } from './cat.service';
     // providers: [ CatService ]
 })
 export class CatListComponent {
+
+  // cats:Array<any> = [
+  //   { name: "Danger Moog!!!! " },
+  //   { name: "Pippa T. Floof" },
+  //   { name: "Sniff Weasel" }
+  // ]
+
   cats:Array<any>
   constructor(cats:CatService) {
     this.cats = cats.get()

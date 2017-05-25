@@ -8,8 +8,6 @@ import { CatService } from './cat.service';
       <catList></catList>
       <catList></catList>
       <catList></catList>
-      <catList></catList>
-      <catList></catList>
     `,
     providers: [CatService]
 })

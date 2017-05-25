@@ -1,8 +1,11 @@
 import {LocationModel} from '../location.model'
 import {corridor} from './corridor'
 
-export var exit = new LocationModel();
+var loc = new LocationModel();
 
-exit.name = "Mountainside"
-exit.description = "Well done, you have escaped!"
-exit.south = corridor
+
+loc.name = "Mountainside"
+loc.description = "Well done, you have escaped!"
+loc.south = corridor
+
+export var exit = loc;
